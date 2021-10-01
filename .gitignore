@@ -1,0 +1,3 @@
+#ignore unwanted files for version control
+node_modules
+package-lock.json
