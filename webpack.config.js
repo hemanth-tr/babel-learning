@@ -1,11 +1,20 @@
 const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+
+const htmlPlugin = new HtmlWebPackPlugin({
+    template: './src/index.html',
+    filename: 'index.html',
+    title: 'RBW'
+});
+
 module.exports = {
-    entry: './public/app.js',
+    entry: './src/app.js',
     output: {
         filename: 'app.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
         clean: true
     },
+    plugins: [htmlPlugin],
     module: {
         rules: [
             {
